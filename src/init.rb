@@ -1,3 +1,4 @@
+
 #!/user/env/bin ruby
 
 require_relative 'classes/ShiftCipher'
@@ -70,4 +71,45 @@ require_relative 'classes/ShiftCipher'
 
 # puts returnValue
 
-puts ShiftCipher.encode("abcd",3)
+# puts ShiftCipher.encode("abcd",3)
+
+
+puts File.join('', 'Users', 'gavar', 'Desktop', 'ruby')
+
+puts "This file (relative) " + __FILE__
+
+puts "This dir (relative) " + File.dirname(__FILE__)
+
+puts "This dir (relative) " + File.expand_path(__FILE__)
+
+
+puts "This dir (absolute) " + File.expand_path(File.dirname(__FILE__))
+
+file = File.new('grocercies.txt', 'w')
+file.puts 'Grocery list:'
+file.print "1) Butter\n"
+file.write "2) Milk\n"
+file << "3) Sugar"
+file.close
+
+# File.open('grocercies.txt', 'r') do |file1|
+
+#     while line = file1.gets
+#         puts file1.gets.chomp
+
+#     end
+# end
+
+
+File.open('grocercies.txt', 'r') do |file1|
+
+    line1 = file1.gets.chomp
+    puts line1.upcase
+
+    puts "****"
+
+    file1.each_line do |line|
+        puts line.chomp.reverse
+    end
+end
+
